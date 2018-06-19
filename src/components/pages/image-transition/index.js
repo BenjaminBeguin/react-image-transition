@@ -33,10 +33,11 @@ const ImageContainer = styled.div`
   position: relative
 
   &:before {
-    width: 103%;
-    height: 100%;
+    width: 110%;
+    height: 103%;
     content: '';
     position: absolute;
+    overflow: hidden;
     left: 0;
     top: 0;
     background: white;
