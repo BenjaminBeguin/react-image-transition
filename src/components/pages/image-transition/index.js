@@ -134,8 +134,8 @@ const Image = styled.div`
   bottom: ${props => props.bottom || 'auto'};
   right: ${props => props.right || 'auto'};
   id: ${props => props.id};
-  // transition: 1s all ease-in-out ${props => props.delay || '1s'};
-  transition: 0.8s all cubic-bezier(.645,.045,.355,1) ${props => props.delay};
+  // transition: 1s all ease-in-out ${props => props.delay || 1}s;
+  transition: 0.8s all cubic-bezier(.645,.045,.355,1) ${props => props.delay}s;
   transform: scale(1.4) rotate(${props => props.rotate});
   opacity: 0;
 
@@ -143,7 +143,7 @@ const Image = styled.div`
     opacity: 1;
     width: 300%;
     height: 300%;
-    transition: 0.8s all cubic-bezier(.645,.045,.355,1) ${props => props.delay} , opacity 0s ease;
+    transition: 0.8s all cubic-bezier(.645,.045,.355,1) ${props => props.delay + 1}s , opacity 0s ease;
 
   }
 
@@ -264,30 +264,30 @@ class imageTransition extends React.Component {
                     let X = '100%'
                     let Xreverse = '-100%'
                     let rotate = '0deg'
-                    let delay = '0.3s'
+                    let delay = 0.3
                     let text = null
 
                     const j = i + 1
 
                     if (j === 1 || j === 2 || j === 3) {
                       top = 0
-                      delay = '0.30s'
+                      delay = 0.30
                     } else if (j === 4 || j === 5 || j === 6 ) {
                       top = '-33.33333334vh'
                       Xreverse = '100%'
                       X = "-100%"
-                      delay = '0.10s'
+                      delay = 0.10
                       rotate = '-0deg'
 
                       if (j === 5) {
-                        delay = '0.20s'
+                        delay = 0.20
                       }
                     } else {
                       bottom = '0'
                       delay = '0.15s'
                     }
 
-                    delay = `0.${i}s`
+                    // delay = `0.${i}`
 
                     // left && right
                     if (j === 1 || j === 4 || j === 7) {
