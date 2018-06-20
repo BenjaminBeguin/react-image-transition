@@ -2,12 +2,22 @@ import React from 'react'
 import styled from 'styled-components';
 import img1 from './img/image1.jpg'
 import img2 from './img/image2.jpg'
+import img3 from './img/image3.jpg'
 
 
 const Slider = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
+
+`
+
+const ImageText = styled.h2`
+  font-size: 50px;
+  position: absolute;
+  z-index: 40;
+  color: white;
+  transform: translateX(-100px);
 `
 
 const ImagesWrapper = styled.div`
@@ -94,7 +104,7 @@ class imageTransition extends React.Component {
       willClose: null
     }
     this.numberOfSquare = 9
-    this.imgs = [img1, img2]
+    this.imgs = [img1, img2, img3]
 
     this.nextSlide = this.nextSlide.bind(this)
   }
@@ -147,6 +157,7 @@ class imageTransition extends React.Component {
                   let Xreverse = '-100%'
                   let rotate = '0deg'
                   let delay = '0.3s'
+                  let text = null
 
                   const j = i + 1
 
@@ -163,7 +174,6 @@ class imageTransition extends React.Component {
                     if (j === 5) {
                       delay = '0.10s'
                     }
-
                   } else {
                     bottom = '0'
                     delay = '0.15s'
@@ -178,8 +188,13 @@ class imageTransition extends React.Component {
                      right = '0'
                   }
 
+                  if (i === 4 ) {
+                    text = (<ImageText>Titre</ImageText>)
+                  }
+
                   return (
                     <ImageContainer key={x} X={X} Xreverse={Xreverse} delay={delay}>
+                      {text}
                       <Image
                         bg={this.imgs[index]}
                         top={top}
