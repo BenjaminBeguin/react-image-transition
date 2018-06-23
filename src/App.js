@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 
 import PageImageTransition from './components/pages/image-transition'
+import homePage from './components/pages/home'
 import './App.css'
 
 class App extends Component {
@@ -13,7 +14,8 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Route exact path="/" component={PageImageTransition} />
+          <Route exact path="/" component={homePage} />
+          <Route exact path="/imageTransition" component={PageImageTransition} />
         </div>
       </Router>
     )
