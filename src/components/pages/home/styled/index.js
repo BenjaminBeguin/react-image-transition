@@ -28,9 +28,13 @@ export const Title = styled.div`
     left: 109px;
     top: 25px;
     z-index: -1;
+  }
+
+
 `
 export const Projects = styled.div`
   display: flex;
+  flex-wrap: wrap;
   margin-top: 40px;
 
   @media (max-width: 700px) {
@@ -58,11 +62,20 @@ export const ProjectTitle = styled.h3`
   color: white;
   text-decoration: none;
   text-transform: uppercase;
+
+  @media (max-width: 700px) {
+    font-size: 15px;
+  }
+  
+  @media (max-width: 900px) {
+    font-size: 15px;
+  }
 `
 
 export const Project = styled.div`
   height: 16vw;
   width: 33%;
+  flex: 0 1 33.333%;
   background-image: url(${props => props.background});
   background-size: cover;
   background-position: center;
